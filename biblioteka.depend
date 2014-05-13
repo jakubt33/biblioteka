@@ -1,0 +1,12 @@
+# depslib dependency file v1.0
+1400018946 source:/home/kuba/github/c++/biblioteka/main.cpp
+	<iostream>
+	<string>
+	"publikacja.h"
+
+1400019068 source:/home/kuba/github/c++/biblioteka/publikacja.cpp
+	"publikacja.h"
+
+1400019216 /home/kuba/github/c++/biblioteka/publikacja.h
+	<string>
+

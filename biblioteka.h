@@ -9,6 +9,8 @@ class biblioteka
     public:
         biblioteka();
         void b_push_ks(ksiazka&);
+        int lista_regal_size();
+        string get_genre_regal(int nr);
         virtual ~biblioteka();
     protected:
     private:

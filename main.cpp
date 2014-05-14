@@ -4,18 +4,22 @@ using namespace std;
 
 int main()
 {
-    ksiazka k("tyt", "kub", "fan"); //tytul, autor, gatunek
-    ksiazka n("t2", "k2", "fan"); //tytul, autor, gatunek
+    ksiazka k("t1", "k2", "fan1"); //tytul, autor, gatunek
+    ksiazka n("t2", "k2", "fan2"); //tytul, autor, gatunek
     ksiazka m("t3", "k3", "fan"); //tytul, autor, gatunek
+    ksiazka p("t4", "k4", "fan"); //tytul, autor, gatunek
 
     biblioteka bib;
     bib.b_push_ks(k);
     bib.b_push_ks(n);
     bib.b_push_ks(m);
+    bib.b_push_ks(p);
 
-    cout << "tytul  " << k.get_title() << endl;
-    cout << "autor " << k.get_author() << endl;
-    cout << "regal  " << k.get_genre() << endl;
+    for(int x=0;x<bib.lista_regal_size();x++)
+    {
+        cout<<bib.get_genre_regal(x)<<endl;
+    }
+
 
     return 0;
 }

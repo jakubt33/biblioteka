@@ -13,12 +13,30 @@ biblioteka::~biblioteka()
 
 void biblioteka::b_push_ks(ksiazka &k)
 {
-    if(lista_regal.size() == 0)
+    int x = 0;
+    int czy_znalazlo = 0;
+    for(x=0;x<lista_regal.size();x++)
     {
-        regal r1;
-        lista_regal.push_back(r1);
-        lista_regal.at(0).r_push_ks(k);
-        lista_regal.at(0).set_genre(k.get_genre());
+        if( lista_regal.at(x).get_genre() == k.get_genre() )
+        {
+            lista_regal.at(x).r_push_ks(k);
+            czy_znalazlo = 1;
+        }
     }
+    if(czy_znalazlo == 0 )
+    {
+        regal r;
+        lista_regal.push_back(r);
+        lista_regal.at(lista_regal.size()-1).r_push_ks(k);
+        lista_regal.at(lista_regal.size()-1).set_genre(k.get_genre());
+    }
+}
 
+int biblioteka::lista_regal_size()
+{
+    return lista_regal.size();
+}
+string biblioteka::get_genre_regal(int nr)
+{
+    return lista_regal.at(nr).get_genre();
 }

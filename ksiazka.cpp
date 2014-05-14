@@ -1,4 +1,5 @@
-#include "ksiazka.h"
+#include "include.h"
+
 using namespace std;
 
 ksiazka::ksiazka( string tytul, string autor, string gatunek):autor(autor), publikacja(tytul, gatunek)
@@ -15,3 +16,4 @@ string ksiazka::get_author()
 {
     return autor;
 }
+

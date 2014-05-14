@@ -1,9 +1,7 @@
 #ifndef KSIAZKA_H
 #define KSIAZKA_H
 
-#include <string>
 #include "publikacja.h"
-
 using namespace std;
 
 class ksiazka: public publikacja

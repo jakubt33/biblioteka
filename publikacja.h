@@ -1,7 +1,6 @@
 #ifndef PUBLIKACJA_H
 #define PUBLIKACJA_H
 
-#include <string>
 using namespace std;
 
 class publikacja
@@ -10,6 +9,7 @@ class publikacja
         publikacja(string tytul = "brak tytulu", string gatunek = "bajka" );
         string get_title();
         string get_genre();
+        void push();
         virtual ~publikacja();
     protected:
     private:

@@ -1,4 +1,4 @@
-#include "publikacja.h"
+#include "include.h"
 using namespace std;
 
 publikacja::publikacja(string tytul, string gatunek): tytul(tytul), gatunek(gatunek)

@@ -1,7 +1,7 @@
 #include "publikacja.h"
 using namespace std;
 
-publikacja::publikacja(string tytul, string autor): tytul(tytul), autor(autor)
+publikacja::publikacja(string tytul, string gatunek): tytul(tytul), gatunek(gatunek)
 {
 }
 
@@ -15,7 +15,7 @@ string publikacja::get_title()
     return tytul;
 }
 
-string publikacja::get_author()
+string publikacja::get_genre()
 {
-    return autor;
+    return gatunek;
 }

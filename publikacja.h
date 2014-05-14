@@ -7,14 +7,14 @@ using namespace std;
 class publikacja
 {
     public:
-        publikacja(string tytul = "kubus puchatek", string autor = "trzyna");
+        publikacja(string tytul = "brak tytulu", string gatunek = "bajka" );
         string get_title();
-        string get_author();
+        string get_genre();
         virtual ~publikacja();
     protected:
     private:
     string tytul;
-    string autor;
+    string gatunek;
 };
 
 #endif // PUBLIKACJA_H

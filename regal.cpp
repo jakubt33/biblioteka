@@ -19,13 +19,14 @@ string regal::get_genre()
 }
 void regal::r_push_ks(ksiazka &ks)
 {
+    ks.set_miejsce_na_regale(r_ks.size()+1);
     r_ks.push_back(ks);
-    ks.set_miejsce_na_regale(r_ks.size());
+
 }
 void regal::r_push_cz(czasopismo cz)
 {
-    r_cz.push_back(cz);
     cz.set_miejsce_na_regale(r_cz.size()+1);
+    r_cz.push_back(cz);
 }
 void regal::wyswietl_regal()
 {

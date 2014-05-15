@@ -8,7 +8,7 @@ class biblioteka
 {
     public:
         biblioteka();
-        void b_push_ks(ksiazka&);
+        void b_push_ks(ksiazka &);
         void b_push_cz(czasopismo&);
         void wyswietl_wszystko();
         void wyswietl_gatunki();

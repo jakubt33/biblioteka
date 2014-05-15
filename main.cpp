@@ -19,18 +19,14 @@ int main()
     bib.b_push_ks(kc);
     bib.b_push_ks(kd);
 
-    //bib.b_push_cz(a);
-    //bib.b_push_cz(b);
-    //bib.b_push_cz(c);
-    //bib.b_push_cz(d);
+    bib.b_push_cz(a);
+    bib.b_push_cz(b);
+    bib.b_push_cz(c);
+    bib.b_push_cz(d);
 
     bib.wyswietl_wszystko();
     //bib.wyswietl_gatunki();
-    cout<<kc.get_miejsce_na_regale()<<endl;
-    cout<<kc.get_author()<<endl;;
-    cout<<kc.get_title()<<endl;;
-    cout<<kc.get_genre()<<endl;
 
-   // bib.wyszykaj_gatunek("sci");
+    // bib.wyszykaj_gatunek("sci");
     return 0;
 }

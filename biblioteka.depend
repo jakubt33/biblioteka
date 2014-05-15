@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1400166971 source:/home/kuba/github/c++/biblioteka/main.cpp
+1400170079 source:/home/kuba/github/c++/biblioteka/main.cpp
 	"include.h"
 
 1400166790 source:/home/kuba/github/c++/biblioteka/publikacja.cpp
@@ -7,7 +7,7 @@
 
 1400167284 /home/kuba/github/c++/biblioteka/publikacja.h
 
-1400167329 source:/home/kuba/github/c++/biblioteka/ksiazka.cpp
+1400169833 source:/home/kuba/github/c++/biblioteka/ksiazka.cpp
 	"include.h"
 
 1400151458 /home/kuba/github/c++/biblioteka/ksiazka.h
@@ -16,10 +16,10 @@
 1400067240 /home/kuba/github/c++/biblioteka/publikacja.cpp
 	"publikacja.h"
 
-1400166051 source:/home/kuba/github/c++/biblioteka/biblioteka.cpp
+1400169694 source:/home/kuba/github/c++/biblioteka/biblioteka.cpp
 	"include.h"
 
-1400160504 /home/kuba/github/c++/biblioteka/biblioteka.h
+1400169684 /home/kuba/github/c++/biblioteka/biblioteka.h
 	<vector>
 	"regal.h"
 
@@ -35,7 +35,7 @@
 
 1400166589 /home/kuba/github/c++/biblioteka/regal.h
 
-1400166654 source:/home/kuba/github/c++/biblioteka/regal.cpp
+1400170040 source:/home/kuba/github/c++/biblioteka/regal.cpp
 	"include.h"
 
 1400159683 /home/kuba/github/c++/biblioteka/czasopismo.h

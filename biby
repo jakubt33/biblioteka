@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<Biblioteka miasto="wroclaw">
+	<regal numer="1" gatunek="bajka">
+		<książka />
+		<książka />
+		<książka />
+	</regal>
+	<regal numer="2" gatunek="sci">
+		<książka />
+		<książka />
+		<książka />
+	</regal>
+	<regal numer="3" gatunek="komedia">
+		<książka />
+		<książka />
+		<książka />
+	</regal>
+</Biblioteka>

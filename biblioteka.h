@@ -7,7 +7,7 @@
 class biblioteka
 {
     public:
-        biblioteka();
+        biblioteka(string miasto = "wroclaw");
         void b_push_ks(ksiazka &);
         void b_push_cz(czasopismo&);
         void wyswietl_wszystko();
@@ -17,10 +17,14 @@ class biblioteka
         void b_find_genre(string);
         int b_ilosc_regalow();
         string get_genre_regal(int nr);
+        string get_city();
+        void zapisz();
+        void set_city(string);
         virtual ~biblioteka();
     protected:
     private:
     vector<regal> lista_regal;
+    string miasto;
 };
 
 #endif // BIBLIOTEKA_H

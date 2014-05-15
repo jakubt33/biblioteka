@@ -12,8 +12,6 @@ class publikacja
         string get_type();
         void set_type(string);
         void set_title(string);
-      //  void set_miejsce_w_wektorze(int);
-        //int get_miejsce_w_wektorze();
         int find_title(string);
         void set_miejsce_na_regale(int);
         int get_miejsce_na_regale();

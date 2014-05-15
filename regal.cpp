@@ -30,42 +30,44 @@ void regal::r_push_cz(czasopismo &cz)
 }
 void regal::r_find_title(string szukana, int numer) //szukanie w ksiazkach
 {
-    int miejsce=NULL;
-    for (int x = 0; x<r_ks.size(); x++)
+    int miejsce=0;
+    unsigned int x=0;
+    for ( x = 0; x<r_ks.size(); x++)
     {
         miejsce = r_ks.at(x).find_title(szukana);
-        if(miejsce != NULL)
+        if(miejsce != 0)
         {
             cout<<"regal nr"<<numer<<" miejsce na r : "<<miejsce<<" - ksiazka"<<endl;
-            miejsce = NULL;
+            miejsce = 0;
         }
     }
-    miejsce = NULL;
-    for (int x = 0; x<r_cz.size(); x++)
+    miejsce = 0;
+    for ( x = 0; x<r_cz.size(); x++)
     {
         miejsce = r_cz.at(x).find_title(szukana);
-        if(miejsce != NULL)
+        if(miejsce != 0)
         {
             cout<<"regal nr"<<numer<<" miejsce na r : "<<miejsce<<" - czasopismo"<<endl;
-            miejsce = NULL;
+            miejsce = 0;
         }
     }
 
 }
 void regal::wyswietl_regal()
 {
-    for (int x = 0; x<r_ks.size(); x++)
+    unsigned int x = 0;
+    for ( x = 0; x<r_ks.size(); x++)
     {
         r_ks.at(x).wyswietl_ksiazke();
     }
-    for (int x = 0; x<r_cz.size(); x++)
+    for ( x = 0; x<r_cz.size(); x++)
     {
         r_cz.at(x).wyswietl_czasopismo();
     }
 }
 void regal::r_edit(int miejsce_na_regale)
 {
-    if( r_ks.size() > miejsce_na_regale) //znaczy ze edytuje czasopismo
+    if( r_ks.size() > miejsce_na_regale)
     {
         r_ks.at(miejsce_na_regale ).edit();
     }

@@ -32,7 +32,7 @@ int publikacja::find_title(string szukana)
 {
     if (tytul == szukana )
         return miejsce_na_regale;
-    else return NULL;
+    else return 0;
 }
 void publikacja::set_type(string type)
 {

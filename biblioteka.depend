@@ -1,12 +1,12 @@
 # depslib dependency file v1.0
-1400188126 source:/home/kuba/github/c++/biblioteka/main.cpp
+1400192736 source:/home/kuba/github/c++/biblioteka/main.cpp
 	"include.h"
 	<string>
 
-1400183949 source:/home/kuba/github/c++/biblioteka/publikacja.cpp
+1400190931 source:/home/kuba/github/c++/biblioteka/publikacja.cpp
 	"include.h"
 
-1400183914 /home/kuba/github/c++/biblioteka/publikacja.h
+1400188230 /home/kuba/github/c++/biblioteka/publikacja.h
 
 1400187902 source:/home/kuba/github/c++/biblioteka/ksiazka.cpp
 	"include.h"
@@ -17,19 +17,20 @@
 1400067240 /home/kuba/github/c++/biblioteka/publikacja.cpp
 	"publikacja.h"
 
-1400188048 source:/home/kuba/github/c++/biblioteka/biblioteka.cpp
+1400191432 source:/home/kuba/github/c++/biblioteka/biblioteka.cpp
 	"include.h"
+	<fstream>
 
-1400187562 /home/kuba/github/c++/biblioteka/biblioteka.h
+1400190636 /home/kuba/github/c++/biblioteka/biblioteka.h
 	<vector>
 	"regal.h"
 
-1400186495 /home/kuba/github/c++/biblioteka/include.h
+1400192462 /home/kuba/github/c++/biblioteka/include.h
 	<iostream>
 	<string>
+	"pugixml.hpp"
 	<vector>
 	"ksiazka.h"
-	"main.h"
 	"czasopismo.h"
 	"publikacja.h"
 	"biblioteka.h"
@@ -37,7 +38,7 @@
 
 1400188071 /home/kuba/github/c++/biblioteka/regal.h
 
-1400188111 source:/home/kuba/github/c++/biblioteka/regal.cpp
+1400191033 source:/home/kuba/github/c++/biblioteka/regal.cpp
 	"include.h"
 
 1400183796 /home/kuba/github/c++/biblioteka/czasopismo.h
@@ -47,4 +48,30 @@
 	"include.h"
 
 1400186793 /home/kuba/github/c++/biblioteka/main.h
+
+1393264050 /home/kuba/github/c++/biblioteka/pugixml.hpp
+	"pugiconfig.hpp"
+	<stddef.h>
+	<exception>
+	<iterator>
+	<iosfwd>
+	<string>
+
+1393264084 /home/kuba/github/c++/biblioteka/pugiconfig.hpp
+
+1393418146 source:/home/kuba/github/c++/biblioteka/pugixml.cpp
+	"pugixml.hpp"
+	<stdlib.h>
+	<stdio.h>
+	<string.h>
+	<assert.h>
+	<wchar.h>
+	<math.h>
+	<float.h>
+	<setjmp.h>
+	<istream>
+	<ostream>
+	<string>
+	<new>
+	<stdint.h>
 

@@ -9,7 +9,7 @@ class regal
         regal();
         void set_genre(string);
         string get_genre();
-        void r_push_ks(ksiazka);
+        void r_push_ks(ksiazka&);
         void r_push_cz(czasopismo);
         void wyswietl_regal();
         virtual ~regal();

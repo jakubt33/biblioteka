@@ -19,3 +19,12 @@ string publikacja::get_genre()
 {
     return gatunek;
 }
+void publikacja::set_miejsce_na_regale(int x)
+{
+    miejsce_na_regale = x;
+}
+int publikacja::get_miejsce_na_regale()
+{
+   // cout<<miejsce_na_regale;
+    return miejsce_na_regale;
+}

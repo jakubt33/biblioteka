@@ -14,7 +14,8 @@ class biblioteka
         void wyswietl_gatunki();
         void b_find_title(string);
         void b_edit(int, int);
-        int lista_regal_size();
+        void b_find_genre(string);
+        int b_ilosc_regalow();
         string get_genre_regal(int nr);
         virtual ~biblioteka();
     protected:

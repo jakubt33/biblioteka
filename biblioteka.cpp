@@ -51,7 +51,7 @@ void biblioteka::b_push_cz(czasopismo &cz)
         lista_regal.at(lista_regal.size()-1).set_genre(cz.get_genre());
     }
 }
-int biblioteka::lista_regal_size()
+int biblioteka::b_ilosc_regalow()
 {
     return lista_regal.size();
 }
@@ -82,6 +82,17 @@ void biblioteka::b_find_title(string szukana)
     {
         lista_regal.at(x).r_find_title(szukana, x+1);
     }
+}
+void biblioteka::b_find_genre(string szukana)
+{
+    cout<<"szukany gatunek: "<<szukana<<endl;
+    int czy_znaleziono = 0;
+    for(int x=0;x<b_ilosc_regalow();x++)
+    {
+        czy_znaleziono += lista_regal.at(x).r_find_genre(szukana,x+1);
+    }
+    if(czy_znaleziono == 0)
+    cout<< "brak wyników"<<endl;
 }
 void biblioteka::b_edit(int numer_regalu, int miejsce_na_regale)
 {

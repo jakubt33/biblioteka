@@ -20,9 +20,9 @@ void czasopismo::set_number(int x)
 
 void czasopismo::wyswietl_czasopismo()
 {
-    cout<<"tytul:  .........  "<<get_title()<<endl;
-    cout<<"numer:  .........  "<<numer<<endl;
-    cout<<"miejse na regale:  "<<get_miejsce_na_regale()<<endl;
+    cout<<"tytul czasopisma:  ..  "<<get_title()<<endl;
+    cout<<"numer:  .............  "<<numer<<endl;
+    cout<<"miejse na regale:  ..  "<<get_miejsce_na_regale()<<endl;
     cout<<endl;
 }
 void czasopismo::edit()

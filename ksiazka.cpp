@@ -22,9 +22,9 @@ void ksiazka::set_author(string x)
 }
 void ksiazka::wyswietl_ksiazke()
 {
-    cout<<"tytul:  ......... "<<get_title()<<endl;
-    cout<<"autor:  .........  "<<autor<<endl;
-    cout<<"miejse na regale:  "<<get_miejsce_na_regale()<<endl;
+    cout<<"tytul książki:  .....  "<<get_title()<<endl;
+    cout<<"autor:  .............  "<<autor<<endl;
+    cout<<"miejse na regale:  ..  "<<get_miejsce_na_regale()<<endl;
     cout<<endl;
 }
 void ksiazka::edit()

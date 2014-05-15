@@ -72,5 +72,16 @@ void regal::r_edit(int miejsce_na_regale)
     else
         r_cz.at(miejsce_na_regale- r_ks.size()).edit();
 }
+int regal::r_find_genre(string szukana, int x)
+{
+    if(get_genre() == szukana)
+    {
+        cout<<"regał nr "<<x<<endl;
+        cout<<"_____________________"<<endl;
+        wyswietl_regal();
+        return 1;
+    }
+    else return 0;
+}
 
 

@@ -29,7 +29,7 @@ int publikacja::get_miejsce_na_regale()
 }
 int publikacja::find_title(string szukana)
 {
-    if (szukana.find(tytul) )
+    if (tytul == szukana )
         return miejsce_na_regale;
     else return NULL;
 }

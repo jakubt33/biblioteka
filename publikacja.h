@@ -9,6 +9,7 @@ class publikacja
         publikacja(string tytul = "brak tytulu", string gatunek = "bajka" );
         string get_title();
         string get_genre();
+        int find_title(string);
         void set_miejsce_na_regale(int);
         int get_miejsce_na_regale();
         void push();

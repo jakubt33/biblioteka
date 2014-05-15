@@ -12,6 +12,7 @@ class biblioteka
         void b_push_cz(czasopismo&);
         void wyswietl_wszystko();
         void wyswietl_gatunki();
+        void b_find_title(string);
         int lista_regal_size();
         string get_genre_regal(int nr);
         virtual ~biblioteka();

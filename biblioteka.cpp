@@ -75,3 +75,12 @@ void biblioteka::wyswietl_gatunki()
         cout<<"regał nr "<<x+1<<" - "<<get_genre_regal(x)<<endl;
     }
 }
+
+void biblioteka::b_find_title(string szukana)
+{
+    for(int x=0;x<lista_regal.size();x++)
+    {
+        lista_regal.at(x).r_find_title(szukana, x+1);
+    }
+}
+

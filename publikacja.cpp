@@ -25,6 +25,12 @@ void publikacja::set_miejsce_na_regale(int x)
 }
 int publikacja::get_miejsce_na_regale()
 {
-   // cout<<miejsce_na_regale;
     return miejsce_na_regale;
 }
+int publikacja::find_title(string szukana)
+{
+    if (szukana.find(tytul) )
+        return miejsce_na_regale;
+    else return NULL;
+}
+

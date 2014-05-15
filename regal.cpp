@@ -23,12 +23,24 @@ void regal::r_push_ks(ksiazka &ks)
     r_ks.push_back(ks);
 }
 
-void regal::r_push_cz(czasopismo cz)
+void regal::r_push_cz(czasopismo &cz)
 {
     cz.set_miejsce_na_regale(r_cz.size()+r_ks.size()+1);
     r_cz.push_back(cz);
 }
-
+void regal::r_find_title(string szukana, int numer) //szukanie w ksiazkach
+{
+    string rezultat = "brak";
+    int miejsce=NULL;
+    for (int x = 0; x<r_ks.size(); x++)
+    {
+        miejsce = r_ks.at(x).find_title(szukana);
+        if(miejsce != NULL)
+            {
+                cout<<"regal nr"<<numer<<" miejsce na r : "<<miejsce<<endl;
+            }
+    }
+}
 void regal::wyswietl_regal()
 {
     for (int x = 0; x<r_ks.size(); x++)

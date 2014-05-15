@@ -4,6 +4,8 @@
 
 #include <vector>
 #include "ksiazka.h"
+#include "czasopismo.h"
 #include "publikacja.h"
 #include "biblioteka.h"
 #include "regal.h"
+

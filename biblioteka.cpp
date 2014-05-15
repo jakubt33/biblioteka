@@ -64,6 +64,7 @@ void biblioteka::wyswietl_wszystko()
     for(int x=0;x<lista_regal.size();x++)
     {
         cout<<"regał nr "<<x+1<<" - "<<get_genre_regal(x)<<endl;
+        cout<<"______________________"<<endl;
         lista_regal.at(x).wyswietl_regal();
     }
 }

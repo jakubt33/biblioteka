@@ -19,15 +19,16 @@ string regal::get_genre()
 }
 void regal::r_push_ks(ksiazka &ks)
 {
-    ks.set_miejsce_na_regale(r_ks.size()+1);
+    ks.set_miejsce_na_regale(r_ks.size()+r_cz.size()+1);
     r_ks.push_back(ks);
-
 }
+
 void regal::r_push_cz(czasopismo cz)
 {
-    cz.set_miejsce_na_regale(r_cz.size()+1);
+    cz.set_miejsce_na_regale(r_cz.size()+r_ks.size()+1);
     r_cz.push_back(cz);
 }
+
 void regal::wyswietl_regal()
 {
     for (int x = 0; x<r_ks.size(); x++)

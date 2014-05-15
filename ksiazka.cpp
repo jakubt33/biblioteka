@@ -22,6 +22,5 @@ void ksiazka::wyswietl_ksiazke()
     cout<<"miejsce: "<<get_miejsce_na_regale()<<endl;
     cout<<"tytul:   "<<get_title()<<endl;
     cout<<"autor:   "<<autor<<endl;
-    cout<<"gatunek: "<<get_genre()<<endl;
     cout<<endl;
 }

@@ -4,7 +4,7 @@ using namespace std;
 
 ksiazka::ksiazka( string tytul, string autor, string gatunek):autor(autor), publikacja(tytul, gatunek)
 {
-       //ctor
+    set_type("ksiazka");
 }
 
 ksiazka::~ksiazka()
@@ -23,4 +23,9 @@ void ksiazka::wyswietl_ksiazke()
     cout<<"tytul:   "<<get_title()<<endl;
     cout<<"autor:   "<<autor<<endl;
     cout<<endl;
+}
+void ksiazka::edit()
+{
+    cout<<"edytujesz ksiazke"<<endl;
+    wyswietl_ksiazke();
 }

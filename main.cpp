@@ -4,14 +4,16 @@ using namespace std;
 
 int main()
 {
-    ksiazka ka("kubus", "k1", "bajka"); //tytul, autor, gatunek
-    ksiazka kb("kubu", "k2", "bajka"); //tytul, autor, gatunek
-    ksiazka kc("kub", "k3", "sci"); //tytul, autor, gatunek
-    ksiazka kd("kubus", "k4", "bajka"); //tytul, autor, gatunek
     czasopismo a("c5", 1, "sci"); //tytul, numer, gatunek
     czasopismo b("c6", 2, "sci"); //tytul, numer, gatunek
     czasopismo c("c7", 3, "komedia"); //tytul, nuemr, gatunek
     czasopismo d("c8", 4, "bajka"); //tytul, anumer, gatunek
+
+    ksiazka ka("kubus", "k1", "bajka"); //tytul, autor, gatunek
+    ksiazka kb("kubu", "k2", "bajka"); //tytul, autor, gatunek
+    ksiazka kc("kub", "k3", "sci"); //tytul, autor, gatunek
+    ksiazka kd("kubus", "k4", "bajka"); //tytul, autor, gatunek
+
 
     biblioteka bib;
     bib.b_push_ks(ka);
@@ -24,8 +26,10 @@ int main()
     bib.b_push_cz(c);
     bib.b_push_cz(d);
 
-    bib.b_find_title("kubus");
-    //bib.wyswietl_wszystko();
+
+    bib.b_edit(3,1); //dorobic zabezpieczenie przed za duzymi liczbami
+    //bib.b_find_title("kubus");
+    bib.wyswietl_wszystko();
     //bib.wyswietl_gatunki();
 
     // bib.wyszykaj_gatunek("sci");

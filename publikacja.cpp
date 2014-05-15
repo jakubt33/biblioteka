@@ -27,10 +27,26 @@ int publikacja::get_miejsce_na_regale()
 {
     return miejsce_na_regale;
 }
+void publikacja::set_miejsce_w_wektorze(int x)
+{
+    miejsce_w_wektorze = x;
+}
+int publikacja::get_miejsce_w_wektorze()
+{
+    return miejsce_w_wektorze;
+}
 int publikacja::find_title(string szukana)
 {
     if (tytul == szukana )
         return miejsce_na_regale;
     else return NULL;
+}
+void publikacja::set_type(string type)
+{
+    typ = type;
+}
+string publikacja::get_type()
+{
+    return typ;
 }
 

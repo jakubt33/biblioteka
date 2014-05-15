@@ -10,6 +10,7 @@ class ksiazka: public publikacja
         ksiazka( string tytul = "brak tytulu", string autor = "brak autora", string  gatunek = "bajka");
         string get_author();
         void set_author(string);
+        void edit();
         void wyswietl_ksiazke();
         virtual ~ksiazka();
     protected:

@@ -11,8 +11,10 @@ class regal
         string get_genre();
         void r_push_ks(ksiazka&);
         void r_push_cz(czasopismo&);
+        void r_push_pu(publikacja&);
         void wyswietl_regal();
         void r_find_title(string, int);
+        void r_edit(int);
         virtual ~regal();
     protected:
     private:

@@ -2,7 +2,7 @@
 using namespace std;
 czasopismo::czasopismo( string tytul, int numer, string gatunek):numer(numer), publikacja(tytul, gatunek)
 {
-    //ctor
+    set_type("czasopismo");
 }
 
 czasopismo::~czasopismo()
@@ -24,4 +24,8 @@ void czasopismo::wyswietl_czasopismo()
     cout<<"tytul:   "<<get_title()<<endl;
     cout<<"numer:   "<<numer<<endl;
     cout<<endl;
+}
+void czasopismo::edit()
+{
+    cout<<"edytujesz czasopismo"<<endl;
 }

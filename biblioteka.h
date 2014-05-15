@@ -13,6 +13,7 @@ class biblioteka
         void wyswietl_wszystko();
         void wyswietl_gatunki();
         void b_find_title(string);
+        void b_edit(int, int);
         int lista_regal_size();
         string get_genre_regal(int nr);
         virtual ~biblioteka();

@@ -10,6 +10,7 @@ class czasopismo: public publikacja
         czasopismo(string tytul = "brak tytulu", int  numer = 0, string  gatunek = "bajka");
         int get_number();
         void set_number(int);
+        void edit();
         void wyswietl_czasopismo();
         virtual ~czasopismo();
     protected:

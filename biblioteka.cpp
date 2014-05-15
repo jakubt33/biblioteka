@@ -83,4 +83,7 @@ void biblioteka::b_find_title(string szukana)
         lista_regal.at(x).r_find_title(szukana, x+1);
     }
 }
-
+void biblioteka::b_edit(int numer_regalu, int miejsce_na_regale)
+{
+    lista_regal.at(numer_regalu-1).r_edit(miejsce_na_regale-1);
+}

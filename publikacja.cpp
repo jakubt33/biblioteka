@@ -27,14 +27,7 @@ int publikacja::get_miejsce_na_regale()
 {
     return miejsce_na_regale;
 }
-void publikacja::set_miejsce_w_wektorze(int x)
-{
-    miejsce_w_wektorze = x;
-}
-int publikacja::get_miejsce_w_wektorze()
-{
-    return miejsce_w_wektorze;
-}
+
 int publikacja::find_title(string szukana)
 {
     if (tytul == szukana )
@@ -48,5 +41,9 @@ void publikacja::set_type(string type)
 string publikacja::get_type()
 {
     return typ;
+}
+void publikacja::set_title(string x)
+{
+    tytul = x;
 }
 

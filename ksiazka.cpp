@@ -17,3 +17,10 @@ string ksiazka::get_author()
     return autor;
 }
 
+void ksiazka::wyswietl_ksiazke()
+{
+    cout<<"tytul:   "<<get_title()<<endl;
+    cout<<"autor:   "<<autor<<endl;
+    cout<<"gatunek: "<<get_genre()<<endl;
+    cout<<endl;
+}

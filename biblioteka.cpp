@@ -40,3 +40,11 @@ string biblioteka::get_genre_regal(int nr)
 {
     return lista_regal.at(nr).get_genre();
 }
+void biblioteka::wyswietl_wszystko()
+{
+    for(int x=0;x<lista_regal.size();x++)
+    {
+        cout<<"regał nr "<<x+1<<" - "<<get_genre_regal(x)<<endl;
+        lista_regal.at(x).wyswietl_regal();
+    }
+}

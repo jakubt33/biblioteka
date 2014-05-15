@@ -15,11 +15,7 @@ int main()
     bib.b_push_ks(m);
     bib.b_push_ks(p);
 
-    for(int x=0;x<bib.lista_regal_size();x++)
-    {
-        cout<<bib.get_genre_regal(x)<<endl;
-    }
-
+    bib.wyswietl_wszystko();
 
     return 0;
 }

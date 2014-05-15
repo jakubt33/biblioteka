@@ -21,3 +21,11 @@ string regal::get_genre()
  {
      r.push_back(ks);
  }
+ void regal::wyswietl_regal()
+ {
+     for (int x = 0; x<r.size(); x++)
+     {
+         r.at(x).wyswietl_ksiazke();
+     }
+ }
+

@@ -145,6 +145,18 @@ void biblioteka::b_usun(int numer_karty)
     }
     if(x == lista_regal.size())
         cout<<"brak publikacji o wskazanym numerze karty bibliotecznej"<<endl;
+    else
+    {
+    while( x<lista_pub.size())
+    {
+        if (lista_pub.at(x).get_numer_karty() == numer_karty)
+            {
+                lista_pub.erase(lista_pub.begin()+x);
+                x=lista_pub.size()+1;
+            }
+        x++;
+    }
+    }
 }
 int biblioteka::b_get_size_pub()
 {
@@ -166,7 +178,7 @@ void biblioteka::zapisz()
         regal.append_attribute("numer") = x+1;
         regal.append_attribute("gatunek") = get_genre_regal(x).c_str();
 
-        for(unsigned int y=0;y<3/*lista_regal(x).r_ks.size()*/;y++)
+        for(unsigned int y=0;y<lista_regal.at(x).r_ks_size();y++)
         {
             xml_node ksiazka = regal.append_child("książka");
         }

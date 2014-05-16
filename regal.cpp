@@ -92,5 +92,9 @@ int regal::r_find_genre(string szukana, int x)
     }
     else return 0;
 }
+int regal::r_ks_size()
+{
+    return r_ks.size();
+}
 
 

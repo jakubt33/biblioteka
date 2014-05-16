@@ -7,12 +7,6 @@
 	</regal>
 	<regal numer="2" gatunek="sci">
 		<książka />
-		<książka />
-		<książka />
 	</regal>
-	<regal numer="3" gatunek="komedia">
-		<książka />
-		<książka />
-		<książka />
-	</regal>
+	<regal numer="3" gatunek="komedia" />
 </Biblioteka>

@@ -23,11 +23,15 @@ void biblioteka::b_push_ks(ksiazka &k)
 {
     unsigned int x = 0;
     int czy_znalazlo = 0;
+
+    int numer_karty = b_get_size_pub()+1;
+    lista_pub.push_back(k);
+
     for(x=0;x<lista_regal.size();x++)
     {
         if( lista_regal.at(x).get_genre() == k.get_genre() )
         {
-            lista_regal.at(x).r_push_ks(k);
+            lista_regal.at(x).r_push_ks(k, numer_karty);
             czy_znalazlo = 1;
         }
     }
@@ -35,7 +39,7 @@ void biblioteka::b_push_ks(ksiazka &k)
     {
         regal r;
         lista_regal.push_back(r);
-        lista_regal.at(lista_regal.size()-1).r_push_ks(k);
+        lista_regal.at(lista_regal.size()-1).r_push_ks(k, numer_karty);
         lista_regal.at(lista_regal.size()-1).set_genre(k.get_genre());
     }
 }
@@ -43,11 +47,15 @@ void biblioteka::b_push_cz(czasopismo &cz)
 {
     unsigned int x = 0;
     int czy_znalazlo = 0;
+
+    int numer_karty = b_get_size_pub()+1;
+    lista_pub.push_back(cz);
+
     for(x=0;x<lista_regal.size();x++)
     {
         if( lista_regal.at(x).get_genre() == cz.get_genre() )
         {
-            lista_regal.at(x).r_push_cz(cz);
+            lista_regal.at(x).r_push_cz(cz, numer_karty);
             czy_znalazlo = 1;
         }
     }
@@ -55,7 +63,7 @@ void biblioteka::b_push_cz(czasopismo &cz)
     {
         regal r;
         lista_regal.push_back(r);
-        lista_regal.at(lista_regal.size()-1).r_push_cz(cz);
+        lista_regal.at(lista_regal.size()-1).r_push_cz(cz, numer_karty);
         lista_regal.at(lista_regal.size()-1).set_genre(cz.get_genre());
     }
 }
@@ -105,6 +113,10 @@ void biblioteka::b_find_genre(string szukana)
 void biblioteka::b_edit(int numer_regalu, int miejsce_na_regale)
 {
     lista_regal.at(numer_regalu-1).r_edit(miejsce_na_regale-1);
+}
+int biblioteka::b_get_size_pub()
+{
+    return lista_pub.size();
 }
 
 using namespace pugi;

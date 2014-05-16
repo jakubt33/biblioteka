@@ -20,10 +20,12 @@ class biblioteka
         string get_city();
         void zapisz();
         void set_city(string);
+        int b_get_size_pub();
         virtual ~biblioteka();
     protected:
     private:
     vector<regal> lista_regal;
+    vector<publikacja> lista_pub;
     string miasto;
 };
 

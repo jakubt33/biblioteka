@@ -22,7 +22,7 @@ void czasopismo::wyswietl_czasopismo()
 {
     cout<<"tytul czasopisma:  ..  "<<get_title()<<endl;
     cout<<"numer:  .............  "<<numer<<endl;
-    cout<<"miejse na regale:  ..  "<<get_miejsce_na_regale()<<endl;
+    cout<<"nr karty bib:  ......  "<<get_numer_karty()<<endl;
     cout<<endl;
 }
 void czasopismo::edit()

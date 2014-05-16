@@ -13,8 +13,8 @@ class publikacja
         void set_type(string);
         void set_title(string);
         int find_title(string);
-        void set_miejsce_na_regale(int);
-        int get_miejsce_na_regale();
+        void set_numer_karty(int);
+        int get_numer_karty();
         void push();
         virtual ~publikacja();
     protected:
@@ -22,8 +22,7 @@ class publikacja
     string tytul;
     string gatunek;
     string typ;
-    int miejsce_na_regale;
-    int miejsce_w_wektorze;
+    int numer_karty;
 };
 
 #endif // PUBLIKACJA_H

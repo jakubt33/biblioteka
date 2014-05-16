@@ -9,9 +9,9 @@ class regal
         regal();
         void set_genre(string);
         string get_genre();
-        void r_push_ks(ksiazka&);
-        void r_push_cz(czasopismo&);
-        void r_push_pu(publikacja&);
+        void r_push_ks(ksiazka&, int);
+        void r_push_cz(czasopismo&, int);
+        void r_push_pu(publikacja&, int);
         void wyswietl_regal();
         void r_find_title(string, int);
         int r_find_genre(string, int);

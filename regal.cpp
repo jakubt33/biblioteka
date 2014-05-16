@@ -17,15 +17,15 @@ string regal::get_genre()
 {
     return gatunek;
 }
-void regal::r_push_ks(ksiazka &ks)
+void regal::r_push_ks(ksiazka &ks, int nr_karty)
 {
-    ks.set_miejsce_na_regale(r_ks.size()+r_cz.size()+1);
+    ks.set_numer_karty(nr_karty);
     r_ks.push_back(ks);
 }
 
-void regal::r_push_cz(czasopismo &cz)
+void regal::r_push_cz(czasopismo &cz, int nr_karty)
 {
-    cz.set_miejsce_na_regale(r_cz.size()+r_ks.size()+1);
+    cz.set_numer_karty(nr_karty);
     r_cz.push_back(cz);
 }
 void regal::r_find_title(string szukana, int numer) //szukanie w ksiazkach

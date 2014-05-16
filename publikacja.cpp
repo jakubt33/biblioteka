@@ -19,19 +19,19 @@ string publikacja::get_genre()
 {
     return gatunek;
 }
-void publikacja::set_miejsce_na_regale(int x)
+void publikacja::set_numer_karty(int x)
 {
-    miejsce_na_regale = x;
+    numer_karty = x;
 }
-int publikacja::get_miejsce_na_regale()
+int publikacja::get_numer_karty()
 {
-    return miejsce_na_regale;
+    return numer_karty;
 }
 
 int publikacja::find_title(string szukana)
 {
     if (tytul == szukana )
-        return miejsce_na_regale;
+        return numer_karty;
     else return 0;
 }
 void publikacja::set_type(string type)

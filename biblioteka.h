@@ -19,9 +19,11 @@ class biblioteka
         string get_genre_regal(int nr);
         string get_city();
         void zapisz();
+        void odczyt();
         void set_city(string);
         int b_get_size_pub();
         int b_ilosc_regalow();
+        void b_set_nr_karty(int);
         virtual ~biblioteka();
     protected:
     private:

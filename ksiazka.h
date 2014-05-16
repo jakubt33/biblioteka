@@ -7,7 +7,7 @@ using namespace std;
 class ksiazka: public publikacja
 {
     public:
-        ksiazka( string tytul = "brak tytulu", string autor = "brak autora", string  gatunek = "brak");
+        ksiazka( string tytul = "brak tytulu", string autor = "brak autora", string  gatunek = "brak", int nr_karty = 0);
         string get_author();
         void set_author(string);
         void edit();

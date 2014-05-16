@@ -1,10 +1,12 @@
 #include "include.h"
 #include <fstream>
+#include <cstdlib>
+
 using namespace std;
 
 biblioteka::biblioteka(string miasto):miasto(miasto)
 {
-     //ctor
+    //ctor
 }
 
 biblioteka::~biblioteka()
@@ -29,7 +31,7 @@ void biblioteka::b_push_ks(ksiazka &k)
     lista_pub.at(numer_karty-1).set_numer_karty(numer_karty);
 
 
-    for(x=0;x<lista_regal.size();x++)
+    for(x=0; x<lista_regal.size(); x++)
     {
         if( lista_regal.at(x).get_genre() == k.get_genre() )
         {
@@ -54,7 +56,7 @@ void biblioteka::b_push_cz(czasopismo &cz)
     int numer_karty = b_get_size_pub();
     lista_pub.at(numer_karty-1).set_numer_karty(numer_karty);
 
-    for(x=0;x<lista_regal.size();x++)
+    for(x=0; x<lista_regal.size(); x++)
     {
         if( lista_regal.at(x).get_genre() == cz.get_genre() )
         {
@@ -80,7 +82,8 @@ string biblioteka::get_genre_regal(int nr)
 }
 void biblioteka::wyswietl_wszystko()
 {
-    for(unsigned int x=0;x<lista_regal.size();x++)
+    cout<<"biblioteka, "<<get_city()<<endl;
+    for(unsigned int x=0; x<lista_regal.size(); x++)
     {
         cout<<"regał nr "<<x+1<<" - "<<get_genre_regal(x)<<endl;
         cout<<"______________________"<<endl;
@@ -89,7 +92,7 @@ void biblioteka::wyswietl_wszystko()
 }
 void biblioteka::wyswietl_gatunki()
 {
-    for(unsigned int x=0;x<lista_regal.size();x++)
+    for(unsigned int x=0; x<lista_regal.size(); x++)
     {
         cout<<"regał nr "<<x+1<<" - "<<get_genre_regal(x)<<endl;
     }
@@ -99,7 +102,7 @@ void biblioteka::b_find_title(string szukana)
 {
     cout<<"szukany tytuł: "<<szukana<<endl;
     int czy_znalazlo = 0;
-    for(unsigned int x=0;x<lista_pub.size();x++)
+    for(unsigned int x=0; x<lista_pub.size(); x++)
     {
         if (lista_pub.at(x).get_title() == szukana)
         {
@@ -115,12 +118,12 @@ void biblioteka::b_find_genre(string szukana)
 {
     cout<<"szukany gatunek: "<<szukana<<endl;
     int czy_znaleziono = 0;
-    for(int x=0;x<b_ilosc_regalow();x++)
+    for(int x=0; x<b_ilosc_regalow(); x++)
     {
         czy_znaleziono += lista_regal.at(x).r_find_genre(szukana,x+1);
     }
     if(czy_znaleziono == 0)
-    cout<< "brak wyników"<<endl;
+        cout<< "brak wyników"<<endl;
 }
 void biblioteka::b_edit(int numer_karty)
 {
@@ -147,15 +150,15 @@ void biblioteka::b_usun(int numer_karty)
         cout<<"brak publikacji o wskazanym numerze karty bibliotecznej"<<endl;
     else
     {
-    while( x<lista_pub.size())
-    {
-        if (lista_pub.at(x).get_numer_karty() == numer_karty)
+        while( x<lista_pub.size())
+        {
+            if (lista_pub.at(x).get_numer_karty() == numer_karty)
             {
                 lista_pub.erase(lista_pub.begin()+x);
                 x=lista_pub.size()+1;
             }
-        x++;
-    }
+            x++;
+        }
     }
 }
 int biblioteka::b_get_size_pub()
@@ -169,23 +172,23 @@ void biblioteka::zapisz()
 
     xml_document doc;
 
-    xml_node biblioteka = doc.append_child("Biblioteka");
+    xml_node biblioteka = doc.append_child("biblioteka");
     biblioteka.append_attribute("miasto") = get_city().c_str();
 
-    for(unsigned int x = 0; x<lista_regal.size();x++)
+    for(unsigned int x = 0; x<lista_regal.size(); x++)
     {
         xml_node regal = biblioteka.append_child("regal");
         regal.append_attribute("numer") = x+1;
         regal.append_attribute("gatunek") = get_genre_regal(x).c_str();
 
-        for(unsigned int y=0;y<lista_regal.at(x).r_ks_size();y++)
+        for(unsigned int y=0; y<lista_regal.at(x).r_ks_size(); y++)
         {
             xml_node ksiazka = regal.append_child("książka");
             ksiazka.append_attribute("tytul") = lista_regal.at(x).r_get_ks_title(y).c_str();
             ksiazka.append_attribute("autor") = lista_regal.at(x).r_get_author(y).c_str();
             ksiazka.append_attribute("nr_karty_bibliotecznej") = lista_regal.at(x).r_get_ks_number(y);
         }
-        for(unsigned int y=0;y<lista_regal.at(x).r_cz_size();y++)
+        for(unsigned int y=0; y<lista_regal.at(x).r_cz_size(); y++)
         {
             xml_node czasopismo = regal.append_child("czasopismo");
             czasopismo.append_attribute("tytul") = lista_regal.at(x).r_get_cz_title(y).c_str();
@@ -194,15 +197,56 @@ void biblioteka::zapisz()
         }
 
     }
-    doc.save_file("biby");
-    /*
-    fstream plik;
-    plik.open("biblioteka.xml", fstream::out);
-    if(plik.good())
+    doc.save_file("doc.xml");
+    //doc.print(cout);
+}
+
+void biblioteka::odczyt()
+{
+    xml_document doc;
+    if(doc.load_file("doc.xml"))
     {
+        xml_node bib = doc.child("biblioteka");
+        set_city(bib.attribute("miasto").value());
+
+        xml_node r=bib.child("regal");
+        string gatunek_r = r.attribute("gatunek").value();
+        if( !gatunek_r.empty() )
+        {
+            do
+            {
+
+                //dodawanie książki.....................................................
+                xml_node ks=r.child("książka");
+                string autor_ks, temp_nr_karty_ks, tytul_ks = ks.attribute("tytul").value();
+                int nr_karty_ks;
+                if( !tytul_ks.empty() )
+                {
+                    do
+                    {
+
+                        autor_ks = ks.attribute("autor").value();
+                        temp_nr_karty_ks = ks.attribute("nr_karty_bibliotecznej").value();
+                        nr_karty_ks = atoi(temp_nr_karty_ks.c_str());
+                        tytul_ks = ks.attribute("tytul").value();
+                        int x = nr_karty_ks;
+                        if (!tytul_ks.empty())
+                        {
+
+                            ksiazka temp(tytul_ks, autor_ks, gatunek_r, nr_karty_ks);
+                            b_push_ks(temp);
+                            ks=ks.next_sibling("książka");
+                        }
+
+                    }   while ( !tytul_ks.empty() );
+                }
+                //dodawanie książki.....................................................
 
 
-        plik.close();
+                r=r.next_sibling("regal");
+                gatunek_r = r.attribute("gatunek").value();
+            }
+            while ( !gatunek_r.empty() );
+        }
     }
-    */
 }

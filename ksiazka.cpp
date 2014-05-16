@@ -2,9 +2,10 @@
 
 using namespace std;
 
-ksiazka::ksiazka( string tytul, string autor, string gatunek):autor(autor), publikacja(tytul, gatunek)
+ksiazka::ksiazka( string tytul, string autor, string gatunek, int nr_karty):autor(autor), publikacja(tytul, gatunek)
 {
     set_type("ksiazka");
+    set_numer_karty(nr_karty);
 }
 
 ksiazka::~ksiazka()

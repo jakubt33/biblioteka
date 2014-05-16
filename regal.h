@@ -13,7 +13,7 @@ class regal
         void r_push_cz(czasopismo&, int);
         void r_push_pu(publikacja&, int);
         void wyswietl_regal();
-        void r_find_title(string, int);
+        //void r_find_title(string, int);
         int r_find_genre(string, int);
         void r_edit(int);
         virtual ~regal();

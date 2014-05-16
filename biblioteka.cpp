@@ -24,8 +24,10 @@ void biblioteka::b_push_ks(ksiazka &k)
     unsigned int x = 0;
     int czy_znalazlo = 0;
 
-    int numer_karty = b_get_size_pub()+1;
     lista_pub.push_back(k);
+    int numer_karty = b_get_size_pub();
+    lista_pub.at(numer_karty-1).set_numer_karty(numer_karty);
+
 
     for(x=0;x<lista_regal.size();x++)
     {
@@ -48,8 +50,9 @@ void biblioteka::b_push_cz(czasopismo &cz)
     unsigned int x = 0;
     int czy_znalazlo = 0;
 
-    int numer_karty = b_get_size_pub()+1;
     lista_pub.push_back(cz);
+    int numer_karty = b_get_size_pub();
+    lista_pub.at(numer_karty-1).set_numer_karty(numer_karty);
 
     for(x=0;x<lista_regal.size();x++)
     {
@@ -94,10 +97,19 @@ void biblioteka::wyswietl_gatunki()
 
 void biblioteka::b_find_title(string szukana)
 {
-    for(unsigned int x=0;x<lista_regal.size();x++)
+    cout<<"szukany tytuł: "<<szukana<<endl;
+    int czy_znalazlo = 0;
+    for(unsigned int x=0;x<lista_pub.size();x++)
     {
-        lista_regal.at(x).r_find_title(szukana, x+1);
+        if (lista_pub.at(x).get_title() == szukana)
+        {
+            cout<<"nr karty bib:"<<lista_pub.at(x).get_numer_karty()<<endl;
+            czy_znalazlo += 1;
+        }
     }
+    if(czy_znalazlo == 0)
+        cout << "brak publikacji o takim tytule"<<endl;
+
 }
 void biblioteka::b_find_genre(string szukana)
 {

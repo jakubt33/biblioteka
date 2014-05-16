@@ -28,31 +28,32 @@ void regal::r_push_cz(czasopismo &cz, int nr_karty)
     cz.set_numer_karty(nr_karty);
     r_cz.push_back(cz);
 }
-void regal::r_find_title(string szukana, int numer) //szukanie w ksiazkach
+/*void regal::r_find_title(string szukana) //szukanie w ksiazkach
 {
-    int miejsce=0;
+    int numer_karty=0;
     unsigned int x=0;
     for ( x = 0; x<r_ks.size(); x++)
     {
-        miejsce = r_ks.at(x).find_title(szukana);
-        if(miejsce != 0)
+        numer_karty = r_ks.at(x).find_title(szukana);
+        if(numer_karty != 0)
         {
-            cout<<"regal nr"<<numer<<" miejsce na r : "<<miejsce<<" - ksiazka"<<endl;
-            miejsce = 0;
+            cout<<"nr karty bib:"<<numer_karty<<" - książka"<<endl;
+            numer_karty = 0;
         }
     }
-    miejsce = 0;
+    numer_karty = 0;
     for ( x = 0; x<r_cz.size(); x++)
     {
-        miejsce = r_cz.at(x).find_title(szukana);
-        if(miejsce != 0)
+        numer_karty = r_cz.at(x).find_title(szukana);
+        if(numer_karty != 0)
         {
-            cout<<"regal nr"<<numer<<" miejsce na r : "<<miejsce<<" - czasopismo"<<endl;
-            miejsce = 0;
+            cout<<"regal nr"<<numer_karty<<" - czasopismo"<<endl;
+            numer_karty = 0;
         }
     }
 
 }
+*/
 void regal::wyswietl_regal()
 {
     unsigned int x = 0;

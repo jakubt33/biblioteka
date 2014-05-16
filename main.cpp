@@ -26,9 +26,9 @@ int main()
     bib.b_push_cz(c);
     bib.b_push_cz(d);
 
-    bib.wyswietl_wszystko();
+    //bib.wyswietl_wszystko();
     //bib.b_edit(3,1); //dorobic zabezpieczenie przed za duzymi liczbami
-    //bib.b_find_title("kubus"); //zrobic wyszukiwanie podciągu
+    bib.b_find_title("kub"); //zrobic wyszukiwanie podciągu
     //bib.wyswietl_gatunki();
     //bib.b_find_genre("bajka");
 

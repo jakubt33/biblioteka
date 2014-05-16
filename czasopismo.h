@@ -7,7 +7,7 @@ using namespace std;
 class czasopismo: public publikacja
 {
     public:
-        czasopismo(string tytul = "brak tytulu", int  numer = 0, string  gatunek = "bajka");
+        czasopismo(string tytul = "brak tytulu", int  numer = 0, string  gatunek = "brak", int numer_karty=0);
         int get_number();
         void set_number(int);
         void edit();

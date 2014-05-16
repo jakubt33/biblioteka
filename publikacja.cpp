@@ -1,7 +1,7 @@
 #include "include.h"
 using namespace std;
 
-publikacja::publikacja(string tytul, string gatunek): tytul(tytul), gatunek(gatunek)
+publikacja::publikacja(string tytul, string gatunek, int numer_karty): tytul(tytul), gatunek(gatunek), numer_karty(numer_karty)
 {
 }
 

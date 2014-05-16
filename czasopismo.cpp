@@ -1,6 +1,6 @@
 #include "include.h"
 using namespace std;
-czasopismo::czasopismo( string tytul, int numer, string gatunek):numer(numer), publikacja(tytul, gatunek)
+czasopismo::czasopismo( string tytul, int numer, string gatunek, int numer_karty):numer(numer), publikacja(tytul, gatunek, numer_karty)
 {
     set_type("czasopismo");
 }

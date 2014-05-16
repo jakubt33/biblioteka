@@ -3,21 +3,21 @@
 	"include.h"
 	<string>
 
-1400238121 source:/home/kuba/github/c++/biblioteka/publikacja.cpp
+1400272186 source:/home/kuba/github/c++/biblioteka/publikacja.cpp
 	"include.h"
 
-1400238104 /home/kuba/github/c++/biblioteka/publikacja.h
+1400272429 /home/kuba/github/c++/biblioteka/publikacja.h
 
-1400269846 source:/home/kuba/github/c++/biblioteka/ksiazka.cpp
+1400272247 source:/home/kuba/github/c++/biblioteka/ksiazka.cpp
 	"include.h"
 
-1400269853 /home/kuba/github/c++/biblioteka/ksiazka.h
+1400272289 /home/kuba/github/c++/biblioteka/ksiazka.h
 	"publikacja.h"
 
 1400067240 /home/kuba/github/c++/biblioteka/publikacja.cpp
 	"publikacja.h"
 
-1400270731 source:/home/kuba/github/c++/biblioteka/biblioteka.cpp
+1400272540 source:/home/kuba/github/c++/biblioteka/biblioteka.cpp
 	"include.h"
 	<fstream>
 	<cstdlib>
@@ -42,10 +42,10 @@
 1400255572 source:/home/kuba/github/c++/biblioteka/regal.cpp
 	"include.h"
 
-1400183796 /home/kuba/github/c++/biblioteka/czasopismo.h
+1400272590 /home/kuba/github/c++/biblioteka/czasopismo.h
 	"publikacja.h"
 
-1400238197 source:/home/kuba/github/c++/biblioteka/czasopismo.cpp
+1400272572 source:/home/kuba/github/c++/biblioteka/czasopismo.cpp
 	"include.h"
 
 1400186793 /home/kuba/github/c++/biblioteka/main.h

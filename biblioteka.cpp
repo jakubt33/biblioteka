@@ -24,12 +24,15 @@ string biblioteka::get_city()
 void biblioteka::b_push_ks(ksiazka &k)
 {
     unsigned int x = 0;
-    int czy_znalazlo = 0;
+    int numer_karty=0, czy_znalazlo = 0;
 
     lista_pub.push_back(k);
-    int numer_karty = b_get_size_pub();
-    lista_pub.at(numer_karty-1).set_numer_karty(numer_karty);
-
+    if(k.get_numer_karty() == 0 )
+       {
+            numer_karty = b_get_size_pub();
+            lista_pub.at(numer_karty-1).set_numer_karty(numer_karty);
+       }
+    else numer_karty = k.get_numer_karty();
 
     for(x=0; x<lista_regal.size(); x++)
     {
@@ -50,11 +53,16 @@ void biblioteka::b_push_ks(ksiazka &k)
 void biblioteka::b_push_cz(czasopismo &cz)
 {
     unsigned int x = 0;
-    int czy_znalazlo = 0;
+    int numer_karty, czy_znalazlo = 0;
 
     lista_pub.push_back(cz);
-    int numer_karty = b_get_size_pub();
-    lista_pub.at(numer_karty-1).set_numer_karty(numer_karty);
+
+    if(cz.get_numer_karty() == 0 )
+       {
+            numer_karty = b_get_size_pub();
+            lista_pub.at(numer_karty-1).set_numer_karty(numer_karty);
+       }
+    else numer_karty = cz.get_numer_karty();
 
     for(x=0; x<lista_regal.size(); x++)
     {
@@ -226,13 +234,13 @@ void biblioteka::odczyt()
                     {
 
                         autor_ks = ks.attribute("autor").value();
+
                         temp_nr_karty_ks = ks.attribute("nr_karty_bibliotecznej").value();
                         nr_karty_ks = atoi(temp_nr_karty_ks.c_str());
                         tytul_ks = ks.attribute("tytul").value();
-                        int x = nr_karty_ks;
+
                         if (!tytul_ks.empty())
                         {
-
                             ksiazka temp(tytul_ks, autor_ks, gatunek_r, nr_karty_ks);
                             b_push_ks(temp);
                             ks=ks.next_sibling("książka");
@@ -241,6 +249,33 @@ void biblioteka::odczyt()
                     }   while ( !tytul_ks.empty() );
                 }
                 //dodawanie książki.....................................................
+
+
+                //dodawanie czasopisma..................................................
+                xml_node cz=r.child("czasopismo");
+                string temp_nr_karty_cz, temp_numer_cz, tytul_cz = cz.attribute("tytul").value();
+                int nr_karty_cz, numer_cz;
+                if( !tytul_cz.empty() )
+                {
+                    do
+                    {
+
+                        temp_numer_cz = cz.attribute("numer").value();
+                        numer_cz = atoi(temp_numer_cz.c_str());
+                        temp_nr_karty_cz = cz.attribute("nr_karty_bibliotecznej").value();
+                        nr_karty_cz = atoi(temp_nr_karty_cz.c_str());
+
+                        tytul_cz = cz.attribute("tytul").value();
+                        if (!tytul_cz.empty())
+                        {
+                            czasopismo temp(tytul_cz, numer_cz, gatunek_r, nr_karty_cz);
+                            b_push_cz(temp);
+                            cz=cz.next_sibling("czasopismo");
+                        }
+
+                    }   while ( !tytul_cz.empty() );
+                }
+                //dodawanie czasopisma..................................................
 
 
                 r=r.next_sibling("regal");

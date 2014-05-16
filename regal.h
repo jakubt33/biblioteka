@@ -15,6 +15,7 @@ class regal
         void wyswietl_regal();
         int r_find_genre(string, int);
         int r_edit(int);
+        int r_usun(int);
         virtual ~regal();
     protected:
     private:

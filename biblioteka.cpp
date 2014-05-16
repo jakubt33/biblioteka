@@ -134,6 +134,18 @@ void biblioteka::b_edit(int numer_karty)
     if(x == lista_regal.size())
         cout<<"brak publikacji o wskazanym numerze karty bibliotecznej"<<endl;
 }
+void biblioteka::b_usun(int numer_karty)
+{
+    unsigned int x = 0;
+    while( x<lista_regal.size())
+    {
+        if (lista_regal.at(x).r_usun(numer_karty))
+            x=lista_regal.size()+1;
+        x++;
+    }
+    if(x == lista_regal.size())
+        cout<<"brak publikacji o wskazanym numerze karty bibliotecznej"<<endl;
+}
 int biblioteka::b_get_size_pub()
 {
     return lista_pub.size();

@@ -26,12 +26,14 @@ int main()
     bib.b_push_cz(c);
     bib.b_push_cz(d);
 
-    bib.b_edit(2);
-    bib.wyswietl_wszystko();
+    //bib.b_edit(2); //dziala
+    //bib.b_usun(3); //dziala
 
-    //bib.b_find_title("kub"); //zrobic wyszukiwanie podciągu
-    //bib.wyswietl_gatunki();
-    //bib.b_find_genre("bajka");
+
+    //bib.wyswietl_wszystko(); //dziala
+    //bib.b_find_title("kub"); //zrobic wyszukiwanie podciągu, cale nazwy dziala
+    //bib.wyswietl_gatunki();//dziala
+    //bib.b_find_genre("bajka");//dzuala
 
     bib.zapisz();
 

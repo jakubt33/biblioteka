@@ -61,6 +61,26 @@ int regal::r_edit(int numer_karty)
     }
     return 0;
 }
+int regal::r_usun(int numer_karty)
+{
+    for(unsigned int x=0; x<r_ks.size();x++)
+    {
+        if(numer_karty == r_ks.at(x).get_numer_karty())
+        {
+            r_ks.erase(r_ks.begin()+x);
+            return 1;
+        }
+    }
+    for(unsigned int x=0; x<r_cz.size();x++)
+    {
+        if(numer_karty == r_cz.at(x).get_numer_karty())
+        {
+            r_cz.erase(r_cz.begin() + x);
+            return 1;
+        }
+    }
+    return 0;
+}
 int regal::r_find_genre(string szukana, int x)
 {
     if(get_genre() == szukana)

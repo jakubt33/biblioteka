@@ -1,17 +1,17 @@
 <?xml version="1.0"?>
 <biblioteka miasto="wroclaw">
-	<regal numer="1" gatunek="bajka">
-		<książka tytul="kta" autor="kaa" nr_karty_bibliotecznej="1" />
-		<książka tytul="ktb" autor="kab" nr_karty_bibliotecznej="2" />
-		<książka tytul="ktd" autor="kad" nr_karty_bibliotecznej="4" />
-		<czasopismo tytul="ctd" numer="4" nr_karty_bibliotecznej="8" />
-	</regal>
-	<regal numer="2" gatunek="sci">
-		<książka tytul="ktc" autor="kac" nr_karty_bibliotecznej="3" />
+	<regal numer="1" gatunek="C++">
+		<ksiazka tytul="Dziedziczenie na gotowym przykładzie klasy biblioteka" autor="Jakub Trzyna" nr_karty_bibliotecznej="1" />
+		<ksiazka tytul="Jak" autor="Jakub" nr_karty_bibliotecznej="2" />
 		<czasopismo tytul="cta" numer="1" nr_karty_bibliotecznej="5" />
-		<czasopismo tytul="ctb" numer="2" nr_karty_bibliotecznej="6" />
+		<czasopismo tytul="Jak" numer="3" nr_karty_bibliotecznej="7" />
 	</regal>
-	<regal numer="3" gatunek="komedia">
-		<czasopismo tytul="ctc" numer="3" nr_karty_bibliotecznej="7" />
+	<regal numer="2" gatunek="Historyczny">
+		<ksiazka tytul="Kubuś Puchatek" autor="Bolesaw Chrobry" nr_karty_bibliotecznej="3" />
+		<czasopismo tytul="Przygody Tomka Programisty" numer="10" nr_karty_bibliotecznej="8" />
+	</regal>
+	<regal numer="3" gatunek="Sci-fi">
+		<ksiazka tytul="jaksa" autor="kad" nr_karty_bibliotecznej="4" />
+		<czasopismo tytul="ctb" numer="2" nr_karty_bibliotecznej="6" />
 	</regal>
 </biblioteka>

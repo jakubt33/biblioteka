@@ -1,5 +1,6 @@
 #include "include.h"
 using namespace std;
+
 regal::regal()
 {
     //ctor
@@ -83,9 +84,9 @@ int regal::r_usun(int numer_karty)
 }
 int regal::r_find_genre(string szukana, int x)
 {
-    if(get_genre() == szukana)
+    if( strstr(get_genre().c_str(), szukana.c_str()) != NULL)
     {
-        cout<<"regał nr "<<x<<endl;
+        cout<<"regał nr "<<x<<" - "<<get_genre()<<endl;
         cout<<"_____________________"<<endl;
         wyswietl_regal();
         return 1;

@@ -1,6 +1,4 @@
 #include "include.h"
-#include <fstream>
-#include <cstdlib>
 
 using namespace std;
 
@@ -112,7 +110,7 @@ void biblioteka::b_find_title(string szukana)
     int czy_znalazlo = 0;
     for(unsigned int x=0; x<lista_pub.size(); x++)
     {
-        if (lista_pub.at(x).get_title() == szukana)
+        if( strstr(lista_pub.at(x).get_title().c_str(), szukana.c_str())!=NULL)
         {
             cout<<"nr karty bib:"<<lista_pub.at(x).get_numer_karty()<<endl;
             czy_znalazlo += 1;
@@ -191,7 +189,7 @@ void biblioteka::zapisz()
 
         for(unsigned int y=0; y<lista_regal.at(x).r_ks_size(); y++)
         {
-            xml_node ksiazka = regal.append_child("książka");
+            xml_node ksiazka = regal.append_child("ksiazka");
             ksiazka.append_attribute("tytul") = lista_regal.at(x).r_get_ks_title(y).c_str();
             ksiazka.append_attribute("autor") = lista_regal.at(x).r_get_author(y).c_str();
             ksiazka.append_attribute("nr_karty_bibliotecznej") = lista_regal.at(x).r_get_ks_number(y);
@@ -206,7 +204,6 @@ void biblioteka::zapisz()
 
     }
     doc.save_file("doc.xml");
-    //doc.print(cout);
 }
 
 void biblioteka::odczyt()
@@ -214,6 +211,9 @@ void biblioteka::odczyt()
     xml_document doc;
     if(doc.load_file("doc.xml"))
     {
+        lista_pub.clear();
+        lista_regal.clear();
+
         xml_node bib = doc.child("biblioteka");
         set_city(bib.attribute("miasto").value());
 
@@ -225,25 +225,23 @@ void biblioteka::odczyt()
             {
 
                 //dodawanie książki.....................................................
-                xml_node ks=r.child("książka");
-                string autor_ks, temp_nr_karty_ks, tytul_ks = ks.attribute("tytul").value();
+                xml_node ks=r.child("ksiazka");
+                string autor_ks, tytul_ks = ks.attribute("tytul").value();
                 int nr_karty_ks;
                 if( !tytul_ks.empty() )
                 {
                     do
                     {
-
                         autor_ks = ks.attribute("autor").value();
 
-                        temp_nr_karty_ks = ks.attribute("nr_karty_bibliotecznej").value();
-                        nr_karty_ks = atoi(temp_nr_karty_ks.c_str());
+                        nr_karty_ks = atoi(ks.attribute("nr_karty_bibliotecznej").value());
                         tytul_ks = ks.attribute("tytul").value();
 
                         if (!tytul_ks.empty())
                         {
                             ksiazka temp(tytul_ks, autor_ks, gatunek_r, nr_karty_ks);
                             b_push_ks(temp);
-                            ks=ks.next_sibling("książka");
+                            ks=ks.next_sibling("ksiazka");
                         }
 
                     }   while ( !tytul_ks.empty() );
@@ -253,17 +251,15 @@ void biblioteka::odczyt()
 
                 //dodawanie czasopisma..................................................
                 xml_node cz=r.child("czasopismo");
-                string temp_nr_karty_cz, temp_numer_cz, tytul_cz = cz.attribute("tytul").value();
+                string tytul_cz = cz.attribute("tytul").value();
                 int nr_karty_cz, numer_cz;
                 if( !tytul_cz.empty() )
                 {
                     do
                     {
 
-                        temp_numer_cz = cz.attribute("numer").value();
-                        numer_cz = atoi(temp_numer_cz.c_str());
-                        temp_nr_karty_cz = cz.attribute("nr_karty_bibliotecznej").value();
-                        nr_karty_cz = atoi(temp_nr_karty_cz.c_str());
+                        numer_cz = atoi( cz.attribute("numer").value());
+                        nr_karty_cz = atoi(cz.attribute("nr_karty_bibliotecznej").value());
 
                         tytul_cz = cz.attribute("tytul").value();
                         if (!tytul_cz.empty())

@@ -1,5 +1,4 @@
 #include "include.h"
-
 using namespace std;
 
 ksiazka::ksiazka( string tytul, string autor, string gatunek, int numer_karty):autor(autor), publikacja(tytul, gatunek, numer_karty)
@@ -34,11 +33,11 @@ void ksiazka::edit()
 
     cout<<"nowy tytuł:"<<endl;
     string nowy_tytul;
-    cin>>nowy_tytul;
+    getline(cin,nowy_tytul);
 
     cout<<"nowy autor:"<<endl;
     string nowy_autor;
-    cin>>nowy_autor;
+    getline(cin,nowy_autor);
 
     cout<<"zapisać? T/N"<<endl;
     string odp;

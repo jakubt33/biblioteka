@@ -1,5 +1,6 @@
 #include "include.h"
 using namespace std;
+
 czasopismo::czasopismo( string tytul, int numer, string gatunek, int numer_karty):numer(numer), publikacja(tytul, gatunek, numer_karty)
 {
     set_type("czasopismo");
@@ -32,7 +33,7 @@ void czasopismo::edit()
 
     cout<<"nowy tytuł:"<<endl;
     string nowy_tytul;
-    cin>>nowy_tytul;
+    getline(cin,nowy_tytul);
 
     cout<<"nowy numer:"<<endl;
     int nowy_numer=0;

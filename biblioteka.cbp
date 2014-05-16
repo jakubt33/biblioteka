@@ -34,12 +34,15 @@
 		</Compiler>
 		<Unit filename="biblioteka.cpp" />
 		<Unit filename="biblioteka.h" />
+		<Unit filename="czasopismo.cpp" />
+		<Unit filename="czasopismo.h" />
 		<Unit filename="include.h" />
 		<Unit filename="ksiazka.cpp" />
 		<Unit filename="ksiazka.h" />
 		<Unit filename="main.cpp" />
 		<Unit filename="publikacja.cpp" />
 		<Unit filename="publikacja.h" />
+		<Unit filename="pugixml.cpp" />
 		<Unit filename="regal.cpp" />
 		<Unit filename="regal.h" />
 		<Extensions>

@@ -122,9 +122,17 @@ void biblioteka::b_find_genre(string szukana)
     if(czy_znaleziono == 0)
     cout<< "brak wyników"<<endl;
 }
-void biblioteka::b_edit(int numer_regalu, int miejsce_na_regale)
+void biblioteka::b_edit(int numer_karty)
 {
-    lista_regal.at(numer_regalu-1).r_edit(miejsce_na_regale-1);
+    unsigned int x = 0;
+    while( x<lista_regal.size())
+    {
+        if (lista_regal.at(x).r_edit(numer_karty))
+            x=lista_regal.size()+1;
+        x++;
+    }
+    if(x == lista_regal.size())
+        cout<<"brak publikacji o wskazanym numerze karty bibliotecznej"<<endl;
 }
 int biblioteka::b_get_size_pub()
 {

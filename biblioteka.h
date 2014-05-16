@@ -13,7 +13,7 @@ class biblioteka
         void wyswietl_wszystko();
         void wyswietl_gatunki();
         void b_find_title(string);
-        void b_edit(int, int);
+        void b_edit(int);
         void b_find_genre(string);
         int b_ilosc_regalow();
         string get_genre_regal(int nr);

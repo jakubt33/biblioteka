@@ -28,32 +28,7 @@ void regal::r_push_cz(czasopismo &cz, int nr_karty)
     cz.set_numer_karty(nr_karty);
     r_cz.push_back(cz);
 }
-/*void regal::r_find_title(string szukana) //szukanie w ksiazkach
-{
-    int numer_karty=0;
-    unsigned int x=0;
-    for ( x = 0; x<r_ks.size(); x++)
-    {
-        numer_karty = r_ks.at(x).find_title(szukana);
-        if(numer_karty != 0)
-        {
-            cout<<"nr karty bib:"<<numer_karty<<" - książka"<<endl;
-            numer_karty = 0;
-        }
-    }
-    numer_karty = 0;
-    for ( x = 0; x<r_cz.size(); x++)
-    {
-        numer_karty = r_cz.at(x).find_title(szukana);
-        if(numer_karty != 0)
-        {
-            cout<<"regal nr"<<numer_karty<<" - czasopismo"<<endl;
-            numer_karty = 0;
-        }
-    }
 
-}
-*/
 void regal::wyswietl_regal()
 {
     unsigned int x = 0;
@@ -66,14 +41,25 @@ void regal::wyswietl_regal()
         r_cz.at(x).wyswietl_czasopismo();
     }
 }
-void regal::r_edit(int miejsce_na_regale)
+int regal::r_edit(int numer_karty)
 {
-    if( r_ks.size() > miejsce_na_regale)
+    for(unsigned int x=0; x<r_ks.size();x++)
     {
-        r_ks.at(miejsce_na_regale ).edit();
+        if(numer_karty == r_ks.at(x).get_numer_karty())
+        {
+            r_ks.at(x).edit();
+            return 1;
+        }
     }
-    else
-        r_cz.at(miejsce_na_regale- r_ks.size()).edit();
+    for(unsigned int x=0; x<r_cz.size();x++)
+    {
+        if(numer_karty == r_cz.at(x).get_numer_karty())
+        {
+            r_cz.at(x).edit();
+            return 1;
+        }
+    }
+    return 0;
 }
 int regal::r_find_genre(string szukana, int x)
 {

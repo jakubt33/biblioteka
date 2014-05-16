@@ -108,5 +108,13 @@ string regal::r_get_cz_title(int miejsce)
 {
     return r_cz.at(miejsce).get_title();
 }
+int regal::r_get_ks_number(int miejsce)
+{
+    return r_ks.at(miejsce).get_numer_karty();
+}
+int regal::r_get_cz_number(int miejsce)
+{
+    return r_cz.at(miejsce).get_numer_karty();
+}
 
 

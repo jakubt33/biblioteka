@@ -17,7 +17,7 @@
 1400067240 /home/kuba/github/c++/biblioteka/publikacja.cpp
 	"publikacja.h"
 
-1400253948 source:/home/kuba/github/c++/biblioteka/biblioteka.cpp
+1400254357 source:/home/kuba/github/c++/biblioteka/biblioteka.cpp
 	"include.h"
 	<fstream>
 
@@ -36,9 +36,9 @@
 	"biblioteka.h"
 	"regal.h"
 
-1400253963 /home/kuba/github/c++/biblioteka/regal.h
+1400254313 /home/kuba/github/c++/biblioteka/regal.h
 
-1400253752 source:/home/kuba/github/c++/biblioteka/regal.cpp
+1400254405 source:/home/kuba/github/c++/biblioteka/regal.cpp
 	"include.h"
 
 1400183796 /home/kuba/github/c++/biblioteka/czasopismo.h

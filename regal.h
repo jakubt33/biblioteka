@@ -20,6 +20,8 @@ class regal
         int r_cz_size();
         string r_get_ks_title(int);
         string r_get_cz_title(int);
+        int r_get_ks_number(int);
+        int r_get_cz_number(int);
         virtual ~regal();
     protected:
     private:

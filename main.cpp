@@ -30,7 +30,7 @@ int main()
     //bib.b_usun(5); //dziala
 
 
-    bib.wyswietl_wszystko(); //dziala
+    //bib.wyswietl_wszystko(); //dziala
     //bib.b_find_title("kub"); //zrobic wyszukiwanie podciągu, cale nazwy dziala
     //bib.wyswietl_gatunki();//dziala
     //bib.b_find_genre("bajka");//dzuala

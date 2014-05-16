@@ -181,6 +181,12 @@ void biblioteka::zapisz()
         for(unsigned int y=0;y<lista_regal.at(x).r_ks_size();y++)
         {
             xml_node ksiazka = regal.append_child("książka");
+            ksiazka.append_attribute("tytul") = lista_regal.at(x).r_get_ks_title(y).c_str();
+        }
+        for(unsigned int y=0;y<lista_regal.at(x).r_cz_size();y++)
+        {
+            xml_node czasopismo = regal.append_child("czasopismo");
+            czasopismo.append_attribute("tytul") = lista_regal.at(x).r_get_cz_title(y).c_str();
         }
 
     }

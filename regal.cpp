@@ -96,5 +96,17 @@ int regal::r_ks_size()
 {
     return r_ks.size();
 }
+int regal::r_cz_size()
+{
+    return r_cz.size();
+}
+string regal::r_get_ks_title(int miejsce)
+{
+    return r_ks.at(miejsce).get_title();
+}
+string regal::r_get_cz_title(int miejsce)
+{
+    return r_cz.at(miejsce).get_title();
+}
 
 

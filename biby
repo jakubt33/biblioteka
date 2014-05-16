@@ -1,12 +1,17 @@
 <?xml version="1.0"?>
 <Biblioteka miasto="wroclaw">
 	<regal numer="1" gatunek="bajka">
-		<książka />
-		<książka />
-		<książka />
+		<książka tytul="kubus" />
+		<książka tytul="kubu" />
+		<książka tytul="kubus" />
+		<czasopismo tytul="c8" />
 	</regal>
 	<regal numer="2" gatunek="sci">
-		<książka />
+		<książka tytul="kub" />
+		<czasopismo tytul="c5" />
+		<czasopismo tytul="c6" />
 	</regal>
-	<regal numer="3" gatunek="komedia" />
+	<regal numer="3" gatunek="komedia">
+		<czasopismo tytul="c7" />
+	</regal>
 </Biblioteka>

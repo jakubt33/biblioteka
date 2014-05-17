@@ -2,16 +2,16 @@
 <biblioteka miasto="wroclaw">
 	<regal numer="1" gatunek="C++">
 		<ksiazka tytul="Dziedziczenie na gotowym przykładzie klasy biblioteka" autor="Jakub Trzyna" nr_karty_bibliotecznej="1" />
-		<ksiazka tytul="Jak" autor="Jakub" nr_karty_bibliotecznej="2" />
-		<czasopismo tytul="cta" numer="1" nr_karty_bibliotecznej="5" />
-		<czasopismo tytul="Jak" numer="3" nr_karty_bibliotecznej="7" />
+		<ksiazka tytul="5 powodów dla których warto oceniać na 5.0" autor="Mariusz Ostrowski" nr_karty_bibliotecznej="2" />
+		<czasopismo tytul="Ali Baba i 40 programistów" numer="1" nr_karty_bibliotecznej="5" />
+		<czasopismo tytul="Monty Python" numer="101" nr_karty_bibliotecznej="7" />
 	</regal>
 	<regal numer="2" gatunek="Historyczny">
 		<ksiazka tytul="Kubuś Puchatek" autor="Bolesaw Chrobry" nr_karty_bibliotecznej="3" />
 		<czasopismo tytul="Przygody Tomka Programisty" numer="10" nr_karty_bibliotecznej="8" />
 	</regal>
 	<regal numer="3" gatunek="Sci-fi">
-		<ksiazka tytul="jaksa" autor="kad" nr_karty_bibliotecznej="4" />
-		<czasopismo tytul="ctb" numer="2" nr_karty_bibliotecznej="6" />
+		<ksiazka tytul="W pustyni i w puszczy" autor="Gal Anonim" nr_karty_bibliotecznej="4" />
+		<czasopismo tytul="Jak przygotować się do sesji w tydzień " numer="1001" nr_karty_bibliotecznej="6" />
 	</regal>
 </biblioteka>

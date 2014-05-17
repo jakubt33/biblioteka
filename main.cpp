@@ -3,19 +3,18 @@ using namespace std;
 
 int main()
 {
-    czasopismo a("cta", 1, "C++"); //tytul, numer, gatunek
-    czasopismo b("ctb", 2, "Sci-fi"); //tytul, numer, gatunek
-    czasopismo c("Jak", 3, "C++"); //tytul, nuemr, gatunek
+    czasopismo a("Ali Baba i 40 programistów", 1, "C++"); //tytul, numer, gatunek
+    czasopismo b("Jak przygotować się do sesji w tydzień ", 1001, "Sci-fi"); //tytul, numer, gatunek
+    czasopismo c("Monty Python", 101, "C++"); //tytul, nuemr, gatunek
     czasopismo d("Przygody Tomka Programisty", 10, "Historyczny"); //tytul, anumer, gatunek
 
-    ksiazka ka("Dziedziczenie na gotowym przykładzie klasy biblioteka", "Jakub Trzyna", "C++"); //tytul, autor, gatunek
-    ksiazka kb("Jak", "Jakub", "C++"); //tytul, autor, gatunek
-    ksiazka kc("Kubuś Puchatek", "Bolesaw Chrobry", "Historyczny"); //tytul, autor, gatunek
-    ksiazka kd("jaksa", "kad", "Sci-fi"); //tytul, autor, gatunek
+    ksiazka ka("Kubuś Puchatek", "Bolesaw Chrobry", "Historyczny"); //tytul, autor, gatunek
+    ksiazka kb("5 powodów dla których warto oceniać na 5.0", "Mariusz Ostrowski", "C++"); //tytul, autor, gatunek
+    ksiazka kc("Dziedziczenie na gotowym przykładzie klasy biblioteka", "Jakub Trzyna", "C++"); //tytul, autor, gatunek
+    ksiazka kd("W pustyni i w puszczy", "Gal Anonim", "Sci-fi"); //tytul, autor, gatunek
 
     biblioteka bib;
 
-    /*
     bib.b_push_ks(ka);
     bib.b_push_ks(kb);
     bib.b_push_ks(kc);
@@ -25,7 +24,7 @@ int main()
     bib.b_push_cz(b);
     bib.b_push_cz(c);
     bib.b_push_cz(d);
-    */
+
 
     //bib.b_edit(2);
     //bib.b_usun(5);
@@ -35,7 +34,7 @@ int main()
     //bib.wyswietl_gatunki();
     //bib.b_find_genre("c");
 
-    //bib.zapisz();
+    bib.zapisz();
     bib.odczyt(); //musi usuwac poprzednią bibe
     bib.wyswietl_wszystko();
 

@@ -1,33 +1,15 @@
 #include "include.h"
 using namespace std;
 
-ksiazka::ksiazka( string tytul, string autor, string gatunek, int numer_karty):autor(autor), publikacja(tytul, gatunek, numer_karty)
-{
+ksiazka::ksiazka( string tytul, string autor, string gatunek, int numer_karty):autor(autor), publikacja(tytul, gatunek, numer_karty){
     set_type("ksiazka");
 }
 
-ksiazka::~ksiazka()
-{
+ksiazka::~ksiazka(){
     //dtor
 }
 
-string ksiazka::get_author()
-{
-    return autor;
-}
-void ksiazka::set_author(string x)
-{
-    autor = x;
-}
-void ksiazka::wyswietl_ksiazke()
-{
-    cout<<"tytul książki:  .....  "<<get_title()<<endl;
-    cout<<"autor:  .............  "<<autor<<endl;
-    cout<<"nr karty bib:  ......  "<<get_numer_karty()<<endl;
-    cout<<endl;
-}
-void ksiazka::edit()
-{
+void ksiazka::edit(){
     cout<<"edytujesz książkę:"<<endl;
     wyswietl_ksiazke();
 
@@ -51,4 +33,19 @@ void ksiazka::edit()
         cout<<"----------------"<<endl;
     }
     else cout<<"powrót do menu"<<endl;
+}
+
+string ksiazka::get_author(){
+    return autor;
+}
+
+void ksiazka::set_author(string x){
+    autor = x;
+}
+
+void ksiazka::wyswietl_ksiazke(){
+    cout<<"tytul książki:  .....  "<<get_title()<<endl;
+    cout<<"autor:  .............  "<<autor<<endl;
+    cout<<"nr karty bib:  ......  "<<get_numer_karty()<<endl;
+    cout<<endl;
 }

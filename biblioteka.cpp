@@ -1,55 +1,65 @@
 #include "include.h"
 
 using namespace std;
+using namespace pugi;
 
-biblioteka::biblioteka(string miasto):miasto(miasto)
-{
+biblioteka::biblioteka(string miasto):miasto(miasto){
     //ctor
 }
 
-biblioteka::~biblioteka()
-{
+biblioteka::~biblioteka(){
     //dtor
 }
-void biblioteka::set_city(string x)
-{
-    miasto = x;
-}
-string biblioteka::get_city()
-{
-    return miasto;
-}
-void biblioteka::b_push_ks(ksiazka &k)
-{
+
+void biblioteka::b_edit(int numer_karty){
     unsigned int x = 0;
-    int numer_karty=0, czy_znalazlo = 0;
-
-    lista_pub.push_back(k);
-    if(k.get_numer_karty() == 0 )
-       {
-            numer_karty = b_get_size_pub();
-            lista_pub.at(numer_karty-1).set_numer_karty(numer_karty);
-       }
-    else numer_karty = k.get_numer_karty();
-
-    for(x=0; x<lista_regal.size(); x++)
+    while( x<lista_regal.size())
     {
-        if( lista_regal.at(x).get_genre() == k.get_genre() )
+        if (lista_regal.at(x).r_edit(numer_karty))
+            x=lista_regal.size()+1;
+        x++;
+    }
+    if(x == lista_regal.size())
+        cout<<"brak publikacji o wskazanym numerze karty bibliotecznej"<<endl;
+}
+
+void biblioteka::b_find_genre(string szukana){
+    cout<<"szukany gatunek: "<<szukana<<endl;
+    int czy_znaleziono = 0;
+    for(int x=0; x<b_ilosc_regalow(); x++)
+    {
+        czy_znaleziono += lista_regal.at(x).r_find_genre(szukana,x+1);
+    }
+    if(czy_znaleziono == 0)
+        cout<< "brak wyników"<<endl;
+}
+
+void biblioteka::b_find_title(string szukana){
+    cout<<"szukany tytuł: "<<szukana<<endl;
+    int czy_znalazlo = 0;
+    for(unsigned int x=0; x<lista_pub.size(); x++)
+    {
+        if( strstr(lista_pub.at(x).get_title().c_str(), szukana.c_str())!=NULL)
         {
-            lista_regal.at(x).r_push_ks(k, numer_karty);
-            czy_znalazlo = 1;
+            cout<<endl;
+            lista_pub.at(x).wyswietl_publikacje();
+            czy_znalazlo += 1;
         }
     }
-    if(czy_znalazlo == 0 )
-    {
-        regal r;
-        lista_regal.push_back(r);
-        lista_regal.at(lista_regal.size()-1).r_push_ks(k, numer_karty);
-        lista_regal.at(lista_regal.size()-1).set_genre(k.get_genre());
-    }
+    if(czy_znalazlo == 0)
+        cout << "brak publikacji o takim tytule"<<endl;
+
 }
-void biblioteka::b_push_cz(czasopismo &cz)
-{
+
+int biblioteka::b_get_size_pub(){
+    return lista_pub.size();
+}
+
+int biblioteka::b_ilosc_regalow(){
+    return lista_regal.size();
+}
+
+void biblioteka::b_push_cz(czasopismo &cz){
     unsigned int x = 0;
     int numer_karty, czy_znalazlo = 0;
 
@@ -78,74 +88,39 @@ void biblioteka::b_push_cz(czasopismo &cz)
         lista_regal.at(lista_regal.size()-1).set_genre(cz.get_genre());
     }
 }
-int biblioteka::b_ilosc_regalow()
-{
-    return lista_regal.size();
-}
-string biblioteka::get_genre_regal(int nr)
-{
-    return lista_regal.at(nr).get_genre();
-}
-void biblioteka::wyswietl_wszystko()
-{
-    cout<<"biblioteka, "<<get_city()<<endl;
-    for(unsigned int x=0; x<lista_regal.size(); x++)
-    {
-        cout<<"regał nr "<<x+1<<" - "<<get_genre_regal(x)<<endl;
-        cout<<"______________________"<<endl;
-        lista_regal.at(x).wyswietl_regal();
-    }
-}
-void biblioteka::wyswietl_gatunki()
-{
-    for(unsigned int x=0; x<lista_regal.size(); x++)
-    {
-        cout<<"regał nr "<<x+1<<" - "<<get_genre_regal(x)<<endl;
-    }
-}
 
-void biblioteka::b_find_title(string szukana)
-{
-    cout<<"szukany tytuł: "<<szukana<<endl;
-    int czy_znalazlo = 0;
-    for(unsigned int x=0; x<lista_pub.size(); x++)
+void biblioteka::b_push_ks(ksiazka &k){
+    unsigned int x = 0;
+    int numer_karty=0, czy_znalazlo = 0;
+
+    lista_pub.push_back(k);
+    if(k.get_numer_karty() == 0 )
+       {
+            numer_karty = b_get_size_pub();
+            lista_pub.at(numer_karty-1).set_numer_karty(numer_karty);
+       }
+    else numer_karty = k.get_numer_karty();
+
+    for(x=0; x<lista_regal.size(); x++)
     {
-        if( strstr(lista_pub.at(x).get_title().c_str(), szukana.c_str())!=NULL)
+        if( lista_regal.at(x).get_genre() == k.get_genre() )
         {
-            cout<<"nr karty bib:"<<lista_pub.at(x).get_numer_karty()<<endl;
-            czy_znalazlo += 1;
+            lista_regal.at(x).r_push_ks(k, numer_karty);
+            czy_znalazlo = 1;
         }
     }
-    if(czy_znalazlo == 0)
-        cout << "brak publikacji o takim tytule"<<endl;
+    if(czy_znalazlo == 0 )
+    {
+        regal r;
+        lista_regal.push_back(r);
+        lista_regal.at(lista_regal.size()-1).r_push_ks(k, numer_karty);
+        lista_regal.at(lista_regal.size()-1).set_genre(k.get_genre());
+    }
+}
 
-}
-void biblioteka::b_find_genre(string szukana)
-{
-    cout<<"szukany gatunek: "<<szukana<<endl;
-    int czy_znaleziono = 0;
-    for(int x=0; x<b_ilosc_regalow(); x++)
-    {
-        czy_znaleziono += lista_regal.at(x).r_find_genre(szukana,x+1);
-    }
-    if(czy_znaleziono == 0)
-        cout<< "brak wyników"<<endl;
-}
-void biblioteka::b_edit(int numer_karty)
-{
+void biblioteka::b_usun(int numer_karty){
     unsigned int x = 0;
-    while( x<lista_regal.size())
-    {
-        if (lista_regal.at(x).r_edit(numer_karty))
-            x=lista_regal.size()+1;
-        x++;
-    }
-    if(x == lista_regal.size())
-        cout<<"brak publikacji o wskazanym numerze karty bibliotecznej"<<endl;
-}
-void biblioteka::b_usun(int numer_karty)
-{
-    unsigned int x = 0;
+    cout<<"usuwanie publikacji o numerze karty bibliotecznej: "<<numer_karty<<endl;
     while( x<lista_regal.size())
     {
         if (lista_regal.at(x).r_usun(numer_karty))
@@ -167,47 +142,16 @@ void biblioteka::b_usun(int numer_karty)
         }
     }
 }
-int biblioteka::b_get_size_pub()
-{
-    return lista_pub.size();
+
+string biblioteka::get_genre_regal(int nr){
+    return lista_regal.at(nr).get_genre();
 }
 
-using namespace pugi;
-void biblioteka::zapisz()
-{
-
-    xml_document doc;
-
-    xml_node biblioteka = doc.append_child("biblioteka");
-    biblioteka.append_attribute("miasto") = get_city().c_str();
-
-    for(unsigned int x = 0; x<lista_regal.size(); x++)
-    {
-        xml_node regal = biblioteka.append_child("regal");
-        regal.append_attribute("numer") = x+1;
-        regal.append_attribute("gatunek") = get_genre_regal(x).c_str();
-
-        for(unsigned int y=0; y<lista_regal.at(x).r_ks_size(); y++)
-        {
-            xml_node ksiazka = regal.append_child("ksiazka");
-            ksiazka.append_attribute("tytul") = lista_regal.at(x).r_get_ks_title(y).c_str();
-            ksiazka.append_attribute("autor") = lista_regal.at(x).r_get_author(y).c_str();
-            ksiazka.append_attribute("nr_karty_bibliotecznej") = lista_regal.at(x).r_get_ks_number(y);
-        }
-        for(unsigned int y=0; y<lista_regal.at(x).r_cz_size(); y++)
-        {
-            xml_node czasopismo = regal.append_child("czasopismo");
-            czasopismo.append_attribute("tytul") = lista_regal.at(x).r_get_cz_title(y).c_str();
-            czasopismo.append_attribute("numer") = lista_regal.at(x).r_get_number(y);
-            czasopismo.append_attribute("nr_karty_bibliotecznej") = lista_regal.at(x).r_get_cz_number(y);
-        }
-
-    }
-    doc.save_file("doc.xml");
+string biblioteka::get_city(){
+    return miasto;
 }
 
-void biblioteka::odczyt()
-{
+void biblioteka::odczyt(){
     xml_document doc;
     if(doc.load_file("doc.xml"))
     {
@@ -281,3 +225,57 @@ void biblioteka::odczyt()
         }
     }
 }
+
+void biblioteka::set_city(string x){
+    miasto = x;
+}
+
+void biblioteka::wyswietl_gatunki(){
+    for(unsigned int x=0; x<lista_regal.size(); x++)
+    {
+        cout<<"regał nr "<<x+1<<" - "<<get_genre_regal(x)<<endl;
+    }
+}
+
+void biblioteka::wyswietl_wszystko(){
+    cout<<"biblioteka, "<<get_city()<<endl;
+    for(unsigned int x=0; x<lista_regal.size(); x++)
+    {
+        cout<<"regał nr "<<x+1<<" - "<<get_genre_regal(x)<<endl;
+        cout<<"______________________"<<endl;
+        lista_regal.at(x).wyswietl_regal();
+    }
+}
+
+void biblioteka::zapisz(){
+
+    xml_document doc;
+
+    xml_node biblioteka = doc.append_child("biblioteka");
+    biblioteka.append_attribute("miasto") = get_city().c_str();
+
+    for(unsigned int x = 0; x<lista_regal.size(); x++)
+    {
+        xml_node regal = biblioteka.append_child("regal");
+        regal.append_attribute("numer") = x+1;
+        regal.append_attribute("gatunek") = get_genre_regal(x).c_str();
+
+        for(unsigned int y=0; y<lista_regal.at(x).r_ks_size(); y++)
+        {
+            xml_node ksiazka = regal.append_child("ksiazka");
+            ksiazka.append_attribute("tytul") = lista_regal.at(x).r_get_ks_title(y).c_str();
+            ksiazka.append_attribute("autor") = lista_regal.at(x).r_get_author(y).c_str();
+            ksiazka.append_attribute("nr_karty_bibliotecznej") = lista_regal.at(x).r_get_ks_number(y);
+        }
+        for(unsigned int y=0; y<lista_regal.at(x).r_cz_size(); y++)
+        {
+            xml_node czasopismo = regal.append_child("czasopismo");
+            czasopismo.append_attribute("tytul") = lista_regal.at(x).r_get_cz_title(y).c_str();
+            czasopismo.append_attribute("numer") = lista_regal.at(x).r_get_number(y);
+            czasopismo.append_attribute("nr_karty_bibliotecznej") = lista_regal.at(x).r_get_cz_number(y);
+        }
+
+    }
+    doc.save_file("doc.xml");
+}
+

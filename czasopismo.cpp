@@ -1,33 +1,15 @@
 #include "include.h"
 using namespace std;
 
-czasopismo::czasopismo( string tytul, int numer, string gatunek, int numer_karty):numer(numer), publikacja(tytul, gatunek, numer_karty)
-{
+czasopismo::czasopismo( string tytul, int numer, string gatunek, int numer_karty):numer(numer), publikacja(tytul, gatunek, numer_karty){
     set_type("czasopismo");
 }
 
-czasopismo::~czasopismo()
-{
+czasopismo::~czasopismo(){
     //dtor
 }
-int czasopismo::get_number()
-{
-    return numer;
-}
-void czasopismo::set_number(int x)
-{
-    numer = x;
-}
 
-void czasopismo::wyswietl_czasopismo()
-{
-    cout<<"tytul czasopisma:  ..  "<<get_title()<<endl;
-    cout<<"numer:  .............  "<<numer<<endl;
-    cout<<"nr karty bib:  ......  "<<get_numer_karty()<<endl;
-    cout<<endl;
-}
-void czasopismo::edit()
-{
+void czasopismo::edit(){
     cout<<"edytujesz czasopismo:"<<endl;
     wyswietl_czasopismo();
 
@@ -52,3 +34,19 @@ void czasopismo::edit()
     }
     else cout<<"powrót do menu"<<endl;
 }
+
+int czasopismo::get_number(){
+    return numer;
+}
+
+void czasopismo::set_number(int x){
+    numer = x;
+}
+
+void czasopismo::wyswietl_czasopismo(){
+    cout<<"tytul czasopisma:  ..  "<<get_title()<<endl;
+    cout<<"numer:  .............  "<<numer<<endl;
+    cout<<"nr karty bib:  ......  "<<get_numer_karty()<<endl;
+    cout<<endl;
+}
+

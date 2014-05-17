@@ -3,10 +3,10 @@ using namespace std;
 
 int main()
 {
-    czasopismo a("Ali Baba i 40 programistów", 1, "C++"); //tytul, numer, gatunek
-    czasopismo b("Jak przygotować się do sesji w tydzień ", 1001, "Sci-fi"); //tytul, numer, gatunek
-    czasopismo c("Monty Python", 101, "C++"); //tytul, nuemr, gatunek
-    czasopismo d("Przygody Tomka Programisty", 10, "Historyczny"); //tytul, anumer, gatunek
+    czasopismo ca("Ali Baba i 40 programistów", 1, "C++"); //tytul, numer, gatunek
+    czasopismo cb("Jak przygotować się do sesji w tydzień ", 1001, "Sci-fi"); //tytul, numer, gatunek
+    czasopismo cc("Monty Python", 101, "C++"); //tytul, nuemr, gatunek
+    czasopismo cd("Przygody Tomka Programisty", 10, "Historyczny"); //tytul, anumer, gatunek
 
     ksiazka ka("Kubuś Puchatek", "Bolesaw Chrobry", "Historyczny"); //tytul, autor, gatunek
     ksiazka kb("5 powodów dla których warto oceniać na 5.0", "Mariusz Ostrowski", "C++"); //tytul, autor, gatunek
@@ -20,23 +20,30 @@ int main()
     bib.b_push_ks(kc);
     bib.b_push_ks(kd);
 
-    bib.b_push_cz(a);
-    bib.b_push_cz(b);
-    bib.b_push_cz(c);
-    bib.b_push_cz(d);
+    bib.b_push_cz(ca);
+    bib.b_push_cz(cb);
+    bib.b_push_cz(cc);
+    bib.b_push_cz(cd);
+
+    /*
+    bib.b_find_title("po");
+    bib.wyswietl_gatunki();
+    bib.b_find_genre("C++");
+    */
 
 
-    //bib.b_edit(2);
-    //bib.b_usun(5);
-
-    //bib.wyswietl_wszystko();
-    //bib.b_find_title("Jak"); //zrobic wyszukiwanie podciągu, cale nazwy dziala
-    //bib.wyswietl_gatunki();
-    //bib.b_find_genre("c");
-
-    bib.zapisz();
-    bib.odczyt(); //musi usuwac poprzednią bibe
+    /*
     bib.wyswietl_wszystko();
+    bib.b_edit(2);
+    bib.b_usun(5);
+    bib.wyswietl_wszystko();
+    bib.zapisz();
+    */
+
+    /*
+    bib.odczyt();
+    bib.wyswietl_wszystko();
+    */
 
     return 0;
 }

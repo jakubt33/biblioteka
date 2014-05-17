@@ -1,13 +1,13 @@
 # depslib dependency file v1.0
-1400283365 source:/home/kuba/github/c++/biblioteka/main.cpp
+1400321946 source:/home/kuba/github/c++/biblioteka/main.cpp
 	"include.h"
 
-1400272186 source:/home/kuba/github/c++/biblioteka/publikacja.cpp
+1400322175 source:/home/kuba/github/c++/biblioteka/publikacja.cpp
 	"include.h"
 
-1400284207 /home/kuba/github/c++/biblioteka/publikacja.h
+1400322199 /home/kuba/github/c++/biblioteka/publikacja.h
 
-1400284213 source:/home/kuba/github/c++/biblioteka/ksiazka.cpp
+1400321041 source:/home/kuba/github/c++/biblioteka/ksiazka.cpp
 	"include.h"
 
 1400284141 /home/kuba/github/c++/biblioteka/ksiazka.h
@@ -16,7 +16,7 @@
 1400067240 /home/kuba/github/c++/biblioteka/publikacja.cpp
 	"publikacja.h"
 
-1400284552 source:/home/kuba/github/c++/biblioteka/biblioteka.cpp
+1400322451 source:/home/kuba/github/c++/biblioteka/biblioteka.cpp
 	"include.h"
 
 1400283939 /home/kuba/github/c++/biblioteka/biblioteka.h
@@ -37,13 +37,13 @@
 
 1400284186 /home/kuba/github/c++/biblioteka/regal.h
 
-1400284094 source:/home/kuba/github/c++/biblioteka/regal.cpp
+1400321533 source:/home/kuba/github/c++/biblioteka/regal.cpp
 	"include.h"
 
 1400284204 /home/kuba/github/c++/biblioteka/czasopismo.h
 	"publikacja.h"
 
-1400284199 source:/home/kuba/github/c++/biblioteka/czasopismo.cpp
+1400321175 source:/home/kuba/github/c++/biblioteka/czasopismo.cpp
 	"include.h"
 
 1400186793 /home/kuba/github/c++/biblioteka/main.h

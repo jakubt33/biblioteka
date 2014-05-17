@@ -16,6 +16,7 @@ class publikacja
         void set_numer_karty(int);
         void set_title(string);
         void set_type(string);
+        void wyswietl_publikacje();
 
         virtual ~publikacja();
     protected:
